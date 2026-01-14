@@ -107,14 +107,14 @@ export const updateProfile = async (req, res) => {
 
         const { password, ...userWithoutPassword } = user.toJSON();
 
-        logger.info("User updated password successfully");
+        logger.info("User updated Profile successfully");
         return res.status(200).json({
             success: true,
-            message: "Update Password Berhasil",
+            message: "Update Profile Berhasil",
             data: userWithoutPassword,
         });
     } catch (error) {
-        logger.error("Failed to updated password", error);
+        logger.error("Failed to updated Profile", error);
         res.status(400).json({
             success: false,
             message: error.message,
