@@ -121,3 +121,13 @@ export const updateProfile = async (req, res) => {
         });
     }
 };
+
+export const logout = async (req, res) => {
+    res.clearCookie("token");
+
+    logger.info("Logged out successfully");
+    res.status(200).json({
+        success: true,
+        message: "Logged out successfully",
+    });
+};
